@@ -1,0 +1,16 @@
+node_modules
+dist
+output
+.git
+.vscode
+.idea
+*.exe
+*.log
+*.db
+backend/webssh-backend
+backend/webssh-backend.exe
+coverage
+.DS_Store
+.env
+backend/.env
+.env.*

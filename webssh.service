@@ -1,0 +1,20 @@
+[Unit]
+Description=web ssh Server Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/var/www/webssh/server
+ExecStart=/var/www/webssh/server/start.sh
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=10
+# 日志重定向到文件，不输出到 journal（避免 systemctl status 显示大量日志）
+StandardOutput=append:/var/log/webssh.log
+StandardError=append:/var/log/webssh_error.log
+# 后端监听端口在代码中固定为 37581，勿在此设置 PORT（无效且有误导性）
+
+[Install]
+WantedBy=multi-user.target

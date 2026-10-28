@@ -1,0 +1,18 @@
+services:
+  webssh:
+    build:
+      context: .
+    container_name: webssh
+    ports:
+      - "35781:37581"
+    volumes:
+      - webssh-data:/app/data
+    environment:
+      - JWT_SECRET=${JWT_SECRET:?JWT_SECRET is required, at least 32 characters}
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY:?ENCRYPTION_KEY is required, at least 32 characters}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-http://localhost:35781}
+      - DATA_DIR=/app/data
+    restart: unless-stopped
+
+volumes:
+  webssh-data:

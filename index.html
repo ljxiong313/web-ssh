@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSH 连接管理器</title>
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <script>
+      // 在 React 挂载前应用主题类，避免浅色模式闪白（与 theme-context 的 webssh-theme 键保持一致）
+      (function () {
+        try {
+          var theme = localStorage.getItem('webssh-theme');
+          document.documentElement.classList.add(theme === 'light' ? 'theme-light' : 'theme-dark');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-background text-foreground">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

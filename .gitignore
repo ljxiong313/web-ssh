@@ -1,0 +1,33 @@
+# dependencies
+node_modules/
+
+# build artifacts
+dist/
+output/
+*.exe
+
+# local env files（模板 .env.example 需提交）
+.env
+.env.*
+!.env.example
+
+# local data & databases
+backend/data/
+backend/data.db
+*.db
+*.log
+
+# editors / OS
+.idea/
+.vscode/
+.claude/
+.DS_Store
+*.pem
+*.orig.*
+
+# typescript
+*.tsbuildinfo
+
+# playwright
+test-results/
+playwright-report/
