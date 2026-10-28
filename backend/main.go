@@ -128,7 +128,7 @@ func main() {
 		})
 	}
 
-	log.Println("Server starting on :37581")
+	log.Printf("webssh %s starting on :37581", Version)
 	if err := r.Run(":37581"); err != nil {
 		log.Fatal("Failed to start server:", err)
 	}
